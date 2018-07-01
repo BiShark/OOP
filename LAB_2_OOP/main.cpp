@@ -2,8 +2,6 @@
 #include <iostream>
 
 #include "Rhomb.h"
-#include "Pentagon.h"
-#include "Hexagon.h"
 #include "TBinaryTree.h"
 #include <memory>
 
@@ -31,22 +29,6 @@ int main(int argc, char** argv)
             }
             tree->insert(std::shared_ptr<Figure>(new Rhomb(side, angle)));
         }
-        else if (action == "insertP" or action == "ins_p") {
-            size_t side;
-            if (!(std::cin >> side)) {
-                std::cout << "Неверное значение." << std::endl;
-                continue;
-            }
-            tree->insert(std::shared_ptr<Figure>(new Pentagon(side)));
-        }
-        else if (action == "insertT" or action == "ins_t") {
-            size_t side;
-            if (!(std::cin >> side)) {
-                std::cout << "Неверное значение." << std::endl;
-                continue;
-            }
-            tree->insert(std::shared_ptr<Figure>(new Pentagon(side)));
-        }
         else if (action == "remove" or action == "r") {
             size_t square;
             if (!(std::cin >> square)) {
@@ -69,7 +51,7 @@ int main(int argc, char** argv)
             if (rect != nullptr) {
                 rect->GetFigure()->Print();
             } else {
-                std::cout << "Прямоугольник не найден." << std::endl;
+                std::cout << "Фигура не найдена." << std::endl;
             }
             
         }
@@ -86,13 +68,11 @@ int main(int argc, char** argv)
         }
         else if (action == "help" or action == "h") {
             std::cout << "'q'     или 'quit'            - выйти из программы."                 << std::endl;
-            std::cout << "'r'     или 'remove s'        - удалить прямоугольник с площадью s." << std::endl;
-            std::cout << "'f'     или 'find s'          - найти прямоугольник с площадью s."   << std::endl;
+            std::cout << "'r'     или 'remove'          - удалить фигуру."                     << std::endl;
+            std::cout << "'f'     или 'find'            - найти фигуру."                       << std::endl;
             std::cout << "'d'     или 'destroy'         - удалить дерево."                     << std::endl;
             std::cout << "'p'     или 'print'           - вывести дерево."                     << std::endl;
-            std::cout << "'ins_r' или 'insertR a b'     - вставить прямоугольник в дерево."    << std::endl;
-            std::cout << "'ins_q' или 'insertQ a'       - вставить квадрат в дерево."          << std::endl;
-            std::cout << "'ins_t' или 'insertT b s l r' - вставить трапецию в дерево."         << std::endl;
+            std::cout << "'ins_r' или 'insertR a b'     - вставить ромб в дерево."             << std::endl;
             std::cout << "'h'     или 'help'            - вывести справку."                    << std::endl;
         }
         action = " ";

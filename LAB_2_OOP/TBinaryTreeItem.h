@@ -1,9 +1,7 @@
 #ifndef TBINARYTREEITEM
 #define TBINARYTREEITEM
 
-#include "Rectangle.h"
-#include "Quadrate.h"
-#include "Trapeze.h"
+#include "Rhomb.h"
 #include <memory>
 
 class TBinaryTree;
