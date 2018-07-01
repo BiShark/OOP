@@ -13,6 +13,7 @@ Rhomb::Rhomb(size_t s, size_t ang): side(s), angle(ang) {
     if (angle > 90) {
         angle = 180 - angle;
     }
+    //std::cout << "Rhomb created: " << side << ", " << angle << std::endl;
 }
 
 Rhomb::Rhomb(std::istream &is) {
